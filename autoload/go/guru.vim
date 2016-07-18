@@ -187,6 +187,18 @@ function! go#guru#Implements(selected)
   call s:loclistSecond(out.out)
 endfunction
 
+" Shows the set of possible sends/receives on the channel operand of the
+" selected send or receive operation
+function! go#guru#Peers(selected)
+  let out = s:RunGuru('peers', 'plain', a:selected, 0)
+  if has_key(out, 'err')
+    call go#util#EchoError(out.err)
+    return
+  endif
+
+  call s:loclistSecond(out.out)
+endfunction
+
 " Describe selected syntax: definition, methods, etc
 function! go#guru#Describe(selected)
   let out = s:RunGuru('describe', 'plain', a:selected, 0)

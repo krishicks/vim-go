@@ -6,6 +6,7 @@ command! -nargs=* -complete=customlist,go#package#Complete GoGuruScope call go#g
 command! -range=% GoImplements call go#guru#Implements(<count>)
 command! -range=% GoCallees call go#guru#Callees(<count>)
 command! -range=% GoDescribe call go#guru#Describe(<count>)
+command! -range=% GoPeers call go#guru#Peers(<count>)
 command! -range=% GoCallers call go#guru#Callers(<count>)
 command! -range=% GoCallstack call go#guru#Callstack(<count>)
 command! -range=% GoFreevars call go#guru#Freevars(<count>)
